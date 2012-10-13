@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 286
-  Top = 191
+  Left = 359
+  Top = 236
   BorderStyle = bsDialog
   Caption = #1042#1077#1095#1077#1088#1080#1085#1082#1072
   ClientHeight = 338
@@ -13,6 +13,8 @@ object Form2: TForm2
   Font.Style = []
   OldCreateOrder = False
   OnClose = FormClose
+  OnDragDrop = FormDragDrop
+  OnDragOver = FormDragOver
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -60,17 +62,24 @@ object Form2: TForm2
     Top = 88
     Width = 145
     Height = 201
+    DragMode = dmAutomatic
     ItemHeight = 13
     MultiSelect = True
     TabOrder = 0
+    OnDragDrop = ListBoxKuhDragDrop
+    OnDragOver = ListBoxGostDragOver
   end
   object ListBoxKuh: TListBox
     Left = 171
     Top = 88
     Width = 145
     Height = 201
+    DragMode = dmAutomatic
     ItemHeight = 13
+    MultiSelect = True
     TabOrder = 1
+    OnDragDrop = ListBoxKuhDragDrop
+    OnDragOver = ListBoxKuhDragOver
   end
   object Button1: TButton
     Left = 130
