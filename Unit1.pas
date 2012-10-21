@@ -55,6 +55,7 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
 var
 i, j: integer;
+f: textfile;
 begin
 for i:=0 to users.Count-1 do
   if edituser.Text = users[i] then
@@ -64,10 +65,28 @@ for i:=0 to users.Count-1 do
     form2.LabelUser.Caption:=users[i];
     form2.LabelUser.Left := (form2.ClientWidth - form2.LabelUser.Width) div 2;
 
+    {
     for j:=0 to users.Count-1 do
       form2.ListBoxGost.Items.Add(users[j]);
+    }
+    try
+      form2.ListBoxGost.Items.LoadFromFile('gost.txt');
+    except
+      messagedlg('Не могу открыть файл с гостями в гостинной.', mtError, [mbok], 0);
+      show;
+      exit;
+    end;
+
+    try
+      form2.ListBoxKuh.Items.LoadFromFile('kuh.txt');
+    except
+      messagedlg('Не могу открыть файл с гостями на кухне.', mtError, [mbok], 0);
+      show;
+      exit;
+    end;
 
     form2.Show;
+    form2.CheckKit;
     exit;
   end;
 

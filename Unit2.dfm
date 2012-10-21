@@ -15,6 +15,8 @@ object Form2: TForm2
   OnClose = FormClose
   OnDragDrop = FormDragDrop
   OnDragOver = FormDragOver
+  OnMouseMove = FormMouseMove
+  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -36,6 +38,7 @@ object Form2: TForm2
     Width = 99
     Height = 21
     Caption = 'LabelUser'
+    DragMode = dmAutomatic
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
     Font.Height = -19
